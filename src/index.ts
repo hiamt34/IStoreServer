@@ -7,7 +7,7 @@ import routers from './routers'
 import { limiter } from './middleware/rateLimiter'
 import dotenv from 'dotenv'
 dotenv.config()
-const PORT: number = Number(process.env.PORT) || 2000
+const PORT = process.env.PORT as unknown as number || 2000
 const HOST: string = process.env.HOST || 'localhost'
 const IS_PRODUCTION = process.env.IS_PRODUCTION || false
 const allowedOrigins = ['http://localhost:3000', 'http://localhost:2000', '*'];
@@ -29,8 +29,8 @@ if (IS_PRODUCTION) {
     app.use('/', limiter)
 }
 
-app.listen(PORT, HOST, () => {
-    log.info(`Server listing at http://${HOST}:${PORT}`)
+app.listen(PORT, '0.0.0.0', () => {
+    log.info(`Server listing on ${PORT}`)
 
     connect();
 
