@@ -1,3 +1,4 @@
+const URL = 'http://localhost:2000/' || `https://istoreserver.herokuapp.com/`
 export const swaggerDefinition = {
     openapi: '3.0.0',
     info: {
@@ -6,7 +7,7 @@ export const swaggerDefinition = {
     },
     servers: [
         {
-            url: process.env.URL || `https://istoreserver.herokuapp.com/`,
+            url: URL,
         },
     ],
 };
