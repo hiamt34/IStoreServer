@@ -5,6 +5,4 @@ package-lock.json
 .env
 dist
 src
-.babelrc
-webpack.config.js
 tsconfig.json
