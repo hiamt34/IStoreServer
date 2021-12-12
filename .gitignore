@@ -4,5 +4,5 @@ package-lock.json
 .rm
 .env
 dist
-
+/src
 tsconfig.json

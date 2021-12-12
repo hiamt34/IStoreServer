@@ -3,15 +3,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin")
 module.exports = {
     entry: "./src/server.ts",
     devtool: 'inline-source-map',
-    module: {
-        rules: [
-            {
-                test: /\.ts?$/,
-                use: 'ts-loader',
-                exclude: /node_modules/,
-            },
-        ],
-    },
+    
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
     },
@@ -33,8 +25,18 @@ module.exports = {
                 './node_modules/swagger-ui-dist/swagger-ui-bundle.js',
                 './node_modules/swagger-ui-dist/swagger-ui-standalone-preset.js',
                 './node_modules/swagger-ui-dist/favicon-16x16.png',
-                './node_modules/swagger-ui-dist/favicon-32x32.png'
+                './node_modules/swagger-ui-dist/favicon-32x32.png',
+                './src/doc/**/*.yaml'
             ]
         })
-    ]
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.ts?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
+        ],
+    }
 }
