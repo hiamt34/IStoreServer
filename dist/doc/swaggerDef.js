@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.swaggerDefinition = void 0;
 const HOST = process.env.HOST || 200;
-const PORT = process.env.PORT || 'localhost';
+const PORT = process.env.PORT || '0.0.0.0';
 exports.swaggerDefinition = {
     openapi: '3.0.0',
     info: {

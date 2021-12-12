@@ -12,11 +12,11 @@ const routers_1 = __importDefault(require("./routers"));
 const rateLimiter_1 = require("./middleware/rateLimiter");
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
-const PORT = Number(process.env.PORT) || 2000;
-const HOST = process.env.HOST || 'localhost';
-const IS_PRODUCTION = process.env.IS_PRODUCTION || false;
+const PORT = process.env.PORT || 2000;
+const HOST = process.env.HOST || '0.0.0.0';
+const IS_PRODUCTION = process.env.IS_PRODUCTION || true;
 const allowedOrigins = ['http://localhost:3000', 'http://localhost:2000', '*'];
-console.log('PORT, PORT');
+console.log('PORT', PORT);
 const options = {
     origin: allowedOrigins
 };
@@ -29,7 +29,7 @@ if (IS_PRODUCTION) {
     app.use('/', rateLimiter_1.limiter);
 }
 app.listen(PORT, HOST, () => {
-    logger_1.default.info(`Server listing at http://${HOST}:${PORT}`);
+    logger_1.default.info(`Server listing on ${PORT}`);
     (0, db_1.default)();
     (0, routers_1.default)(app);
 });

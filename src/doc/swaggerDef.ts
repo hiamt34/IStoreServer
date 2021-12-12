@@ -1,5 +1,5 @@
 const HOST = process.env.HOST || 200
-const PORT = process.env.PORT || 'localhost'
+const PORT = process.env.PORT || '0.0.0.0'
 export const swaggerDefinition = {
     openapi: '3.0.0',
     info: {
