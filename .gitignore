@@ -3,3 +3,8 @@ yarn.lock
 package-lock.json
 .rm
 .env
+dist
+src
+.babelrc
+webpack.config.js
+tsconfig.json
