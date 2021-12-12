@@ -6,11 +6,12 @@
   "author": "hiamt34 <d17dccn195@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": ">=7.6.0"
+    "node": "16.13.0",
+    "npm": "8.1.0"
   },
   "scripts": {
-    "start": "node dist/app.js",
-    "dev": "nodemon src/app.ts",
+    "start": "node dist/server.js",
+    "dev": "nodemon src/server.ts",
     "watch": "tsc -w"
   },
   "devDependencies": {
