@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import log from '../logger';
 
 const connect = () => {
-    const dbUri = process.env.DB_URI as string || 'mongodb://localhost:27017/server-istore'
+    const dbUri = process.env.DB_URI as string || 'mongodb+srv://hiamt34:havit123@istoreserver.php3q.mongodb.net/IStoreServer?retryWrites=true&w=majority'
     const options = {
         useNewUrlParser: true,
         // useCreateIndex: true,

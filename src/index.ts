@@ -11,7 +11,6 @@ const PORT: number = Number(process.env.PORT) || 2000
 const HOST: string = process.env.HOST || 'localhost'
 const IS_PRODUCTION = process.env.IS_PRODUCTION || false
 const allowedOrigins = ['http://localhost:3000', 'http://localhost:2000', '*'];
-console.log(process.env.PORT);
 
 const options: cors.CorsOptions = {
     origin: allowedOrigins
