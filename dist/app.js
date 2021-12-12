@@ -33,4 +33,4 @@ app.listen(PORT, HOST, () => {
     (0, db_1.default)();
     (0, routers_1.default)(app);
 });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=app.js.map
