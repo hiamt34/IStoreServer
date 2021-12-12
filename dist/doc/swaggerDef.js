@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.swaggerDefinition = void 0;
-const HOST = process.env.HOST || 200;
+const HOST = process.env.HOST || 2000;
 const PORT = process.env.PORT || '0.0.0.0';
 exports.swaggerDefinition = {
     openapi: '3.0.0',
