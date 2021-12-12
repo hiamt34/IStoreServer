@@ -16,6 +16,7 @@ const PORT = Number(process.env.PORT) || 2000;
 const HOST = process.env.HOST || 'localhost';
 const IS_PRODUCTION = process.env.IS_PRODUCTION || false;
 const allowedOrigins = ['http://localhost:3000', 'http://localhost:2000', '*'];
+console.log('PORT, PORT');
 const options = {
     origin: allowedOrigins
 };
