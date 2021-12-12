@@ -10,8 +10,8 @@
     "npm": "8.1.0"
   },
   "scripts": {
-    "dev": "node dist/server.js",
-    "start": "node src/server.ts",
+    "start": "node dist/server.js",
+    "dev": "nodemon src/server.ts",
     "watch": "tsc -w"
   },
   "devDependencies": {
