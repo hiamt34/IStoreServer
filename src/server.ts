@@ -11,7 +11,7 @@ dotenv.config()
 const PORT = process.env.PORT as unknown as number || 2000
 const HOST: string = process.env.HOST || '0.0.0.0'
 const IS_PRODUCTION = process.env.IS_PRODUCTION || true
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:2000', '*'];
+const allowedOrigins = ['http://localhost:3000', 'http://localhost:2000', '*', 'https://istoreserver.herokuapp.com/'];
 
 const options: cors.CorsOptions = {
     origin: allowedOrigins

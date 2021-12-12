@@ -1,5 +1,3 @@
-const HOST = process.env.HOST || 2000
-const PORT = process.env.PORT || '0.0.0.0'
 export const swaggerDefinition = {
     openapi: '3.0.0',
     info: {
@@ -8,7 +6,7 @@ export const swaggerDefinition = {
     },
     servers: [
         {
-            url: process.env.URL || `http://${HOST}:${PORT}/`,
+            url: process.env.URL || `https://istoreserver.herokuapp.com/`,
         },
     ],
 };

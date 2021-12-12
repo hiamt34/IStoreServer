@@ -1,8 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.swaggerDefinition = void 0;
-const HOST = process.env.HOST || 2000;
-const PORT = process.env.PORT || '0.0.0.0';
 exports.swaggerDefinition = {
     openapi: '3.0.0',
     info: {
@@ -11,7 +9,7 @@ exports.swaggerDefinition = {
     },
     servers: [
         {
-            url: process.env.URL || `http://${HOST}:${PORT}/`,
+            url: process.env.URL || `https://istoreserver.herokuapp.com/`,
         },
     ],
 };

@@ -15,7 +15,7 @@ dotenv_1.default.config();
 const PORT = process.env.PORT || 2000;
 const HOST = process.env.HOST || '0.0.0.0';
 const IS_PRODUCTION = process.env.IS_PRODUCTION || true;
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:2000', '*'];
+const allowedOrigins = ['http://localhost:3000', 'http://localhost:2000', '*', 'https://istoreserver.herokuapp.com/'];
 const options = {
     origin: allowedOrigins
 };
