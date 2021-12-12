@@ -1,0 +1,118 @@
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+        status:
+          type: string
+          enum: [Hot, New, Normal]
+        sale:
+          type: number
+        price:
+          type: number
+        shortDescription:
+          type: string
+        img:
+          type: string
+        category:
+          type: string
+      example:
+        id: 61b4ef4398c1f2e2329244f8
+        name: iphone 13 promax
+        status: Hot
+        sale: 10
+        price: 30000000
+        shortDescription: max length 100
+        img: somethink
+        category: 1
+    Error:
+      type: object
+      properties:
+        code: 
+          type: number
+        status:
+          type: boolean
+        message:
+          type: string
+      
+        
+  responses:
+    OK:
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              code:
+                type: number
+              status:
+                type: boolean
+              data:
+                $ref: '#/components/schemas/Product'
+            example:
+              code: 200
+              status: true
+              data:
+                id: 61b4ef4398c1f2e2329244f8
+                name: iphone 13 promax
+                status: Hot
+                sale: 10
+                price: 30000000
+                shortDescription: max length 100
+                img: somethink
+                category: 1
+    Success:
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              code:
+                type: number
+              status:
+                type: boolean
+            example:
+              code: 200
+              status: true
+    NotFound:
+      description: Not found
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          example:
+            code: 404
+            status: false
+            message: data not found!
+    Conflict:
+      description: Conflict
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          example:
+            code: 409
+            status: false
+            message: Conflict!
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          example:
+            code: 400
+            status: false
+            message: Bad Request!
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

@@ -1,0 +1,172 @@
+tags:
+  name: Product
+paths:
+  /products:
+    get:
+      summary: Returns a list of products.
+      description: not paginate
+      tags: [Product]
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: number
+                  status: 
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Product'
+        400:
+          $ref: '#/components/responses/BadRequest'
+
+    post:
+      summary: Create Product
+      description: somethink..
+      tags: [Product]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - price
+                - shortDescription
+                - img
+                - category
+              properties:
+                name:
+                  type: string
+                price:
+                  type: number
+                sale:
+                  type: number
+                  min: 0
+                  max: 100
+                status:
+                  type: string
+                  enum: [Hot, New, Normal]
+                shortDescription:
+                  type: string
+                  maxLength: 100
+                  description: maxLength 100 char
+                img:
+                  type: string
+                category:
+                   type: string
+              example:
+                name: iphone 13 promax
+                status: Hot
+                sale: 10
+                price: 30000000
+                shortDescription: somethink
+                img: somethink
+                category: 1
+      responses:
+        200:
+          $ref: '#/components/responses/OK'   
+        400:
+          $ref: '#/components/responses/BadRequest'
+
+  /products/{_id}:
+    get:
+      summary: Returns a Product
+      description: somethink...
+      tags: [Product]
+      parameters:
+        - in: path
+          name: _id
+          required: true
+          schema:
+            type: string
+          description: Product _id
+      responses:
+        200:
+          $ref: '#/components/responses/OK'
+        404:
+          $ref: '#/components/responses/NotFound'
+        400:
+          $ref: '#/components/responses/BadRequest'
+    delete:
+      summary: Delete a Product
+      description: somethink...
+      tags: [Product]
+      parameters:
+        - in: path
+          name: _id
+          required: true
+          schema:
+            type: string
+          description: Product _id
+      responses:
+        200:
+          $ref: '#/components/responses/Success'
+        400:
+          $ref: '#/components/responses/BadRequest'
+    put:
+      summary: Update a Product
+      description: somethink...
+      tags: [Product]
+      parameters:
+        - in: path
+          name: _id
+          required: true
+          schema:
+            type: string
+          description: Product _id
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - price
+                - shortDescription
+                - img
+                - category
+              properties:
+                name:
+                  type: string
+                price:
+                  type: number
+                sale:
+                  type: number
+                  min: 0
+                  max: 100
+                status:
+                  type: string
+                  enum: [Hot, New, Normal]
+                shortDescription:
+                  type: string
+                  maxLength: 100
+                  description: maxLength 100 char
+                img:
+                  type: string
+                category:
+                  type: string
+              example:
+                name: iphone 13 promax
+                status: Hot
+                sale: 10
+                price: 30000000
+                shortDescription: somethink
+                img: somethink
+                string:
+      responses:
+        200:
+          $ref: '#/components/responses/Success'
+        400:
+          $ref: '#/components/responses/BadRequest'
+  
+
+
+
