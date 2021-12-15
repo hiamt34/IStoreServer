@@ -127,12 +127,6 @@ paths:
           application/json:
             schema:
               type: object
-              required:
-                - name
-                - price
-                - shortDescription
-                - img
-                - category
               properties:
                 name:
                   type: string
@@ -160,7 +154,7 @@ paths:
                 price: 30000000
                 shortDescription: somethink
                 img: somethink
-                string:
+                category: 2
       responses:
         200:
           $ref: '#/components/responses/Success'
